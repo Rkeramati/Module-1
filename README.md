@@ -54,6 +54,7 @@ For detailed testing instructions, see [`testing.md`](testing.md)
 
 ### Task 1.5 Deliverables
 Add the required training logs and visualizations here along with the parameters that you used.
+
 ```
 # TODO: Add Task 1.5 deliverables here
 ```
