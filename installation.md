@@ -3,7 +3,7 @@ hide:
   - navigation
 ---
 
-# MiniTorch Installation
+# MiniTorch Module 1 Installation
 
 MiniTorch requires Python 3.8 or higher. To check your version of Python, run:
 
@@ -46,6 +46,28 @@ Each assignment is distributed through a Git repo. Once you accept the assignmen
 >>> cd {{ASSIGNMENT}}
 ```
 
+## Syncing Previous Module Files
+
+Module 1 requires files from Module 0. Sync them using:
+
+```bash
+>>> python sync_previous_module.py <path-to-module-0> <path-to-current-module>
+```
+
+Example:
+```bash
+>>> python sync_previous_module.py ../Module-0 .
+```
+
+Replace `<path-to-module-0>` with the path to your Module 0 directory and `<path-to-current-module>` with `.` for the current directory.
+
+This will copy the following required files:
+- `minitorch/operators.py`
+- `minitorch/module.py` 
+- `tests/test_module.py`
+- `tests/test_operators.py`
+- `project/run_manual.py`
+
 ## Installation
 
 Install all packages in your virtual environment:
@@ -62,4 +84,10 @@ Make sure everything is installed by running:
 >>> python -c "import minitorch; print('Success!')"
 ```
 
-You're ready to start the assignments!
+Verify that the autodiff functionality is available:
+
+```bash
+>>> python -c "from minitorch import scalar; print('Module 1 ready!')"
+```
+
+You're ready to start Module 1!
