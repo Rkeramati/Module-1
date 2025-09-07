@@ -54,6 +54,9 @@ For detailed testing instructions, see [`testing.md`](testing.md)
 
 ### Task 1.5 Deliverables
 Add the required training logs and visualizations here along with the parameters that you used.
+```
+# TODO: Add Task 1.5 deliverables here
+```
 
 ### Submission Instructions
 
@@ -78,3 +81,12 @@ The following files are synced from Module 0:
 - `tests/test_module.py`
 - `tests/test_operators.py`
 - `project/run_manual.py`
+
+## Allowed Libraries
+
+<!-- TODO: Add list of allowed libraries for this module -->
+The following libraries are allowed for use in this assignment:
+
+```
+# Libraries will be listed here
+```
