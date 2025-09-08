@@ -11,13 +11,15 @@ def central_difference(f: Any, *vals: Any, arg: int = 0, epsilon: float = 1e-6) 
     r"""
     Computes an approximation to the derivative of `f` with respect to one arg.
 
+    Uses the central difference formula: f'(x) ≈ (f(x + ε) - f(x - ε)) / (2ε)
+
     See :doc:`derivative` or https://en.wikipedia.org/wiki/Finite_difference for more details.
 
     Args:
         f : arbitrary function from n-scalar args to one value
         *vals : n-float values $x_0 \ldots x_{n-1}$
         arg : the number $i$ of the arg to compute the derivative
-        epsilon : a small constant
+        epsilon : a small constant for finite difference approximation
 
     Returns:
         An approximation of $f'_i(x_0, \ldots, x_{n-1})$
@@ -60,6 +62,11 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
 
     Returns:
         Non-constant Variables in topological order starting from the right.
+
+    Hints:
+        - Use depth-first search (DFS) to visit nodes
+        - Track visited nodes to avoid cycles (use node.unique_id)
+        - Return nodes in reverse order (dependencies first)
     """
     # TODO: Implement for Task 1.4.
     raise NotImplementedError("Need to implement for Task 1.4")
@@ -75,6 +82,15 @@ def backpropagate(variable: Variable, deriv: Any) -> None:
         deriv  : Its derivative that we want to propagate backward to the leaves.
 
     No return. Should write to its results to the derivative values of each leaf through `accumulate_derivative`.
+    
+    Hints:
+        - First get all nodes in topological order using topological_sort()
+        - Create a dictionary to store derivatives for each node (keyed by unique_id)
+        - Initialize the starting node's derivative to the input deriv
+        - Process nodes in the topological order (which is already correct for backprop)
+        - For leaf nodes: call node.accumulate_derivative(derivative)
+        - For non-leaf nodes: call node.chain_rule(derivative) to get parent derivatives
+        - Sum derivatives when the same parent appears multiple times
     """
     # TODO: Implement for Task 1.4.
     raise NotImplementedError("Need to implement for Task 1.4")

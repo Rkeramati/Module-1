@@ -43,6 +43,7 @@ class ScalarHistory:
 
 # ## Task 1.2 and 1.4
 # Scalar Forward and Backward
+# Use what you defined in scalar_functions.py
 
 _var_count = 0
 

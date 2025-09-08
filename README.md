@@ -44,11 +44,20 @@ Start by reviewing the module guide:
 
 Follow the guides listed in the module documentation to complete each task systematically. Each task builds upon the previous one, so complete them in order.
 
-* Task 1.1: Numerical Derivatives and Central Difference
-* Task 1.2: Scalars  
-* Task 1.3: Chain Rule
-* Task 1.4: Backpropagation
-* Task 1.5: Training
+* **Task 1.1: Numerical Derivatives and Central Difference**
+  - Files to modify: `minitorch/autodiff.py`
+
+* **Task 1.2: Scalars**  
+  - Files to modify: `minitorch/scalar.py`, `minitorch/scalar_functions.py`
+
+* **Task 1.3: Chain Rule**
+  - Files to modify: `minitorch/scalar.py`
+
+* **Task 1.4: Backpropagation**
+  - Files to modify: `minitorch/autodiff.py`, `minitorch/scalar_functions.py`
+
+* **Task 1.5: Training**
+  - Files to examine: `project/run_scalar.py`, `project/interface/train.py`
 
 For detailed testing instructions, see [`testing.md`](testing.md)
 

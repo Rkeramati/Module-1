@@ -95,7 +95,9 @@ class Log(ScalarFunction):
         return operators.log_back(a, d_output)
 
 
-# To implement.
+### To implement for Task 1.2 and 1.4 ###
+# Look at the above classes for examples on how to implement the forward and backward functions
+# Use the operators.py file from Module 0
 
 
 class Mul(ScalarFunction):
