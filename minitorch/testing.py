@@ -16,7 +16,7 @@ class MathTest(Generic[A]):
     @staticmethod
     def addConstant(a: A) -> A:
         "Add contant to the argument"
-        return 5 + a
+        return 5.0 + a
 
     @staticmethod
     def square(a: A) -> A:
@@ -31,17 +31,17 @@ class MathTest(Generic[A]):
     @staticmethod
     def subConstant(a: A) -> A:
         "Subtract a constant from the argument"
-        return a - 5
+        return a - 5.0
 
     @staticmethod
     def multConstant(a: A) -> A:
         "Multiply a constant to the argument"
-        return 5 * a
+        return 5.0 * a
 
     @staticmethod
     def div(a: A) -> A:
         "Divide by a constant"
-        return a / 5
+        return a / 5.0
 
     @staticmethod
     def inv(a: A) -> A:
@@ -56,7 +56,7 @@ class MathTest(Generic[A]):
     @staticmethod
     def log(a: A) -> A:
         "Apply log to a large value"
-        return operators.log(a + 100000)
+        return operators.log(a + 100000.0)
 
     @staticmethod
     def relu(a: A) -> A:
@@ -66,11 +66,11 @@ class MathTest(Generic[A]):
     @staticmethod
     def exp(a: A) -> A:
         "Apply exp to a smaller value"
-        return operators.exp(a - 200)
+        return operators.exp(a - 200.0)
 
     @staticmethod
     def explog(a: A) -> A:
-        return operators.log(a + 100000) + operators.exp(a - 200)
+        return operators.log(a + 100000.0) + operators.exp(a - 200.0)
 
     @staticmethod
     def add2(a: A, b: A) -> A:
@@ -116,10 +116,10 @@ class MathTest(Generic[A]):
         return (
             operators.log(
                 operators.sigmoid(
-                    operators.relu(operators.relu(a * 10 + 7) * 6 + 5) * 10
+                    operators.relu(operators.relu(a * 10.0 + 7.0) * 6.0 + 5.0) * 10.0
                 )
             )
-            / 50
+            / 50.0
         )
 
     @classmethod
@@ -170,7 +170,7 @@ class MathTestVariable(MathTest):
 
     @staticmethod
     def log(x):
-        return (x + 100000).log()
+        return (x + 100000.0).log()
 
     @staticmethod
     def relu(x):
@@ -178,19 +178,19 @@ class MathTestVariable(MathTest):
 
     @staticmethod
     def exp(a):
-        return (a - 200).exp()
+        return (a - 200.0).exp()
 
     @staticmethod
     def explog(a):
-        return (a + 100000).log() + (a - 200).exp()
+        return (a + 100000.0).log() + (a - 200.0).exp()
 
     @staticmethod
     def sum_red(a):
-        return a.sum(0)
+        return a.sum(0.0)
 
     @staticmethod
     def mean_red(a):
-        return a.mean(0)
+        return a.mean(0.0)
 
     @staticmethod
     def mean_full_red(a):
@@ -210,4 +210,4 @@ class MathTestVariable(MathTest):
 
     @staticmethod
     def complex(a):
-        return (((a * 10 + 7).relu() * 6 + 5).relu() * 10).sigmoid().log() / 50
+        return (((a * 10.0 + 7.0).relu() * 6.0 + 5.0).relu() * 10.0).sigmoid().log() / 50.0
