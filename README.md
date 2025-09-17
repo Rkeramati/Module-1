@@ -62,7 +62,7 @@ Follow the guides listed in the module documentation to complete each task syste
 For detailed testing instructions, see [`testing.md`](testing.md)
 
 ### Task 1.5 Deliverables
-Add the required training logs and visualizations here along with the parameters that you used.
+Add the required training logs and visualizations here, along with the hyperparameters you used. Please include your results for all four datasets: simple, diagonal, split, and XOR.
 
 ```
 # TODO: Add Task 1.5 deliverables here

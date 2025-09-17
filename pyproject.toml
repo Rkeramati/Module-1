@@ -103,9 +103,7 @@ exclude = [
     "**/mt_diagrams/*",
     "**/minitorch/testing.py",
     "**/docs/**/*",
-    "minitorch/autodiff.py",
     "minitorch/optim.py",
-    "minitorch/scalar.py",
     "minitorch/datasets.py",
     "sync_previous_module.py",
 ]
