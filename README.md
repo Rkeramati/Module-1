@@ -99,3 +99,5 @@ The following libraries are allowed for use in this assignment:
 ```
 math
 ```
+
+Note: the `numpy` library is used by project code in `scalar.py`, but you will not need it elsewhere to complete this module.
