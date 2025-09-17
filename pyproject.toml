@@ -46,6 +46,8 @@ exclude = [
     "**/mt_diagrams",
     "**/.*",
     "*chainrule.py*",
+    "**/minitorch/autodiff.py",
+    "sync_previous_module.py",
 ]
 venvPath = "."
 venv = ".venv"
@@ -60,7 +62,7 @@ reportUnknownLambdaType = "none"
 reportIncompatibleMethodOverride = "none"
 reportPrivateUsage = "none"
 reportMissingParameterType = "error"
-
+reportMissingImports = "none"
 
 [tool.pytest.ini_options]
 markers = [
@@ -101,6 +103,11 @@ exclude = [
     "**/mt_diagrams/*",
     "**/minitorch/testing.py",
     "**/docs/**/*",
+    "minitorch/autodiff.py",
+    "minitorch/optim.py",
+    "minitorch/scalar.py",
+    "minitorch/datasets.py",
+    "sync_previous_module.py",
 ]
 
 [tool.ruff.lint]
@@ -178,3 +185,4 @@ unfixable = []
 
 [tool.ruff.lint.extend-per-file-ignores]
 "tests/**/*.py" = ["D"]
+"minitorch/scalar_functions.py" = ["ANN001", "ANN201"]

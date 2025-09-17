@@ -94,9 +94,10 @@ The following files are synced from Module 0:
 
 ## Allowed Libraries
 
-<!-- TODO: Add list of allowed libraries for this module -->
 The following libraries are allowed for use in this assignment:
 
 ```
-# Libraries will be listed here
+math
 ```
+
+Note: the `numpy` library is used by project code in `scalar.py`, but you will not need it elsewhere to complete this module.
