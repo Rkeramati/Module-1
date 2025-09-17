@@ -106,6 +106,7 @@ exclude = [
     "minitorch/autodiff.py",
     "minitorch/optim.py",
     "minitorch/scalar.py",
+    "minitorch/datasets.py",
     "sync_previous_module.py",
 ]
 
