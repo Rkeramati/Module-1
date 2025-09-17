@@ -99,6 +99,9 @@ class Scalar:
     def __bool__(self) -> bool:
         return bool(self.data)
 
+    def __float__(self) -> float:
+        return float(self.data)
+
     def __lt__(self, b: ScalarLike) -> Scalar:
         # TODO: Implement for Task 1.2.
         raise NotImplementedError("Need to implement for Task 1.2")
