@@ -94,9 +94,8 @@ The following files are synced from Module 0:
 
 ## Allowed Libraries
 
-<!-- TODO: Add list of allowed libraries for this module -->
 The following libraries are allowed for use in this assignment:
 
 ```
-# Libraries will be listed here
+math
 ```
