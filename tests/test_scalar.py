@@ -1,7 +1,7 @@
 from typing import Callable, Tuple
 
 import pytest
-from hypothesis import given
+from hypothesis import given, assume
 from hypothesis.strategies import DrawFn, composite, floats
 
 import minitorch
@@ -105,6 +105,11 @@ def test_one_derivative(
     fn: Tuple[str, Callable[[float], float], Callable[[Scalar], Scalar]], t1: Scalar
 ) -> None:
     name, _, scalar_fn = fn
+    
+    # Avoid discontinuity for ReLU
+    if name == "relu":
+        assume(abs(t1.data + 5.5) > 1e-3)
+    
     derivative_check(scalar_fn, t1)
 
 
@@ -117,4 +122,11 @@ def test_two_derivative(
     t2: Scalar,
 ) -> None:
     name, _, scalar_fn = fn
+    
+    # Avoid discontinuities for comparison functions
+    if name == "gt2" or name == "lt2":
+        assume(abs((t1.data + 1.2) - t2.data) > 1e-3)
+    elif name == "eq2":
+        assume(abs(t1.data - (t2.data + 5.5)) > 1e-3)
+    
     derivative_check(scalar_fn, t1, t2)
