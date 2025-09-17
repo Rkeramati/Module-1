@@ -67,6 +67,42 @@ class ScalarFunction:
         back = minitorch.scalar.ScalarHistory(cls, ctx, scalars)
         return minitorch.scalar.Scalar(c, back)
 
+    @staticmethod
+    @abstractmethod
+    def forward(ctx: Context, *args: float) -> float:
+        """Computes the forward pass of the function.
+
+        Args:
+            ctx (Context): Context object to save information for backward computation.
+            *args (float): Input values.
+
+        Returns:
+            float: The result of the forward computation.
+
+        Raises:
+            NotImplementedError: If not implemented in subclass.
+
+        """
+        raise NotImplementedError("Forward method not implemented.")
+
+    @staticmethod
+    @abstractmethod
+    def backward(ctx: Context, d_output: float) -> Tuple[float, ...]:
+        """Computes the backward pass (derivative) of the function.
+
+        Args:
+            ctx (Context): Context object containing saved values from forward pass.
+            d_output (float): Derivative of the output with respect to some scalar.
+
+        Returns:
+            Tuple[float, ...]: The gradients with respect to each input.
+
+        Raises:
+            NotImplementedError: If not implemented in subclass.
+
+        """
+        raise NotImplementedError("Backward method not implemented.")
+
 
 # Examples
 class Add(ScalarFunction):
