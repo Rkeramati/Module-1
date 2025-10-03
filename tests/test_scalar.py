@@ -90,6 +90,18 @@ def test_two_args(
     t2: Scalar,
 ) -> None:
     name, base_fn, scalar_fn = fn
+
+    if name == "gt2" or name == "lt2":
+        assume(abs(t1.data - t2.data) > 1e-3)
+        assume(abs((t1.data + 1.2) - t2.data) > 1e-3)
+        assume(abs((t1.data - t2.data) > 1.2))
+    elif name == "eq2":
+        assume(abs(t1.data - t2.data) > 1e-3)
+        assume(abs(t1.data - (t2.data + 5.5)) > 1e-3)
+        assume(abs((t1.data - t2.data) > 1.2))
+    elif name == "div2":
+        assume(abs((t2.data + 5.5)) > 1e-3)
+
     assert_close(scalar_fn(t1, t2).data, base_fn(t1.data, t2.data))
 
 
